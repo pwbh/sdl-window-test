@@ -3,7 +3,7 @@ const c = @cImport({
 });
 
 pub fn main() !void {
-    if (c.SDL_Init(c.SDL_INIT_EVERYTHING) != 0) {
+    if (c.SDL_Init(c.SDL_INIT_VIDEO) != 0) {
         c.SDL_Log("Unable to initialize SDL: %s", c.SDL_GetError());
         return error.SDLInitializationFailed;
     }
